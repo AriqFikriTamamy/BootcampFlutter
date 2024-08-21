@@ -2,15 +2,26 @@
 import 'dart:io';
 
 void main() {
-  // var dartInstall = y;
-  stdout.writeln('Apakah anda ingin menginstall aplikasi Dart? (Y/N)');
-  final dartInstall = stdin.readLineSync();
+  stdout.writeln('Apakah anda ingin menginstall aplikasi Dart? (Y/T)');
+  // var dartInstall = stdin.readLineSync();
 
-  if (dartInstall == true) {
-    // print("Anda akan menginstall aplikasi Dart");
-    stdout.writeln("Anda akan menginstall Dart");
+  // var install = dartInstall;
+  // if (install == true) {
+  //   // print("Anda akan menginstall aplikasi Dart");
+  //   stdout.writeln("Anda akan menginstall Dart");
+  // } else {
+  //   // print("aborted");
+  //   stdout.writeln("aborted");
+  // }
+
+  var installDart = stdin.readLineSync();
+  var install = installDart;
+
+  if (install == "y" || install == "Y") {
+    print("Anda akan menginstall aplikasi Dart");
+  } else if (install == "t" || install == "T") {
+    print("aborted");
   } else {
-    // print("aborted");
-    stdout.writeln("aborted");
+    print("failed");
   }
 }
