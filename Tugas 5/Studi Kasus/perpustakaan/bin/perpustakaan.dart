@@ -99,8 +99,10 @@ class Peminjaman {
   void pinjamBuku() {
     if (buku.jumlah > 0) {
       buku.jumlah -= 1;
+      print('===== Proses Pinjam Buku ======');
       print(
           '${anggota.nama} berhasil meminjam buku "${buku.judul}" pada tanggal $tanggalPinjam');
+      print('==================\n');
     } else {
       print('Buku dengan judul "${buku.judul}" tidak tersedia untuk dipinjam.');
     }
@@ -110,16 +112,20 @@ class Peminjaman {
 
   void kembalikanBuku() {
     tanggalKembali = DateTime.now();
+    print('===== Proses Pengembalian Buku ======');
     print(
         '${anggota.nama} mengembalikan buku "${buku.judul}" pada tanggal $tanggalKembali.');
+    print('==================\n');
   }
 
   void lihatRiwayat() {
+    print('===== Proses Lihat Riwayat Peminjaman ======');
     print(
         'Riwayat peminjaman: ${anggota.nama} meminjam "${buku.judul}" pada $tanggalPinjam.');
     if (tanggalKembali != null) {
       print(' dan mengembalikan pada $tanggalKembali.');
     }
+    print('==================\n');
   }
 }
 
