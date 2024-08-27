@@ -46,13 +46,13 @@ class Buku {
 
   void editBuku({String? judulBaru, String? pengarangBaru, String? isbnBaru}) {
     if (judulBaru != null) {
-      this.judul = judulBaru;
+      judul = judulBaru;
     }
     if (pengarangBaru != null) {
-      this.pengarang = pengarangBaru;
+      pengarang = pengarangBaru;
     }
     if (isbnBaru != null) {
-      this.isbn = isbnBaru;
+      isbn = isbnBaru;
     }
     print('Info buku berhasil diperbarui');
   }
@@ -78,8 +78,8 @@ class Anggota {
   }
 
   void editAnggota(String namaBaru, String alamatBaru) {
-    this.nama = namaBaru;
-    this.alamat = alamatBaru;
+    nama = namaBaru;
+    alamat = alamatBaru;
   }
 
   void tampilkanInfo() {
