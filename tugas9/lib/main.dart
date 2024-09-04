@@ -17,6 +17,7 @@ class NewsHomePage extends StatelessWidget {
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          child: Padding(),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
