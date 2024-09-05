@@ -4,10 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tugas9/model/news_model.dart';
 import 'package:tugas9/widget/custom_box_image.dart';
+// import 'news.dart';
 
 void main() {
   runApp(const NewsHomePage());
 }
+
+//Halaman News
+
+// void main() {
+//   runApp(const NewsPage());
+// }
 
 class NewsHomePage extends StatelessWidget {
   const NewsHomePage({super.key});
@@ -17,7 +24,6 @@ class NewsHomePage extends StatelessWidget {
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          child: Padding(),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -43,7 +49,7 @@ class NewsHomePage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
                 itemBuilder: (context, index) => CustomBoxImage(
-                  margin: EdgeInsets.only(top: 32, left: index == 0 ? 30 : 0),
+                  margin: EdgeInsets.only(top: 32, left: index == 0 ? 10 : 0),
                   padding: const EdgeInsets.all(24),
                   urlImage: 'assets/images/News.png',
                   width: 311,
