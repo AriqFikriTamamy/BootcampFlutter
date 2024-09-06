@@ -42,15 +42,15 @@ class GetStartedPage extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xff3498DB),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8))),
                       child: Text('Masuk',
                           style: GoogleFonts.arimo(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: Colors.white)),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xff3498DB),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8))),
                     )),
                 const SizedBox(height: 21),
                 SizedBox(
@@ -58,16 +58,16 @@ class GetStartedPage extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text('Mendaftar',
-                          style: GoogleFonts.arimo(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: const Color(0xff3498DB))),
                       style: ElevatedButton.styleFrom(
                           side: const BorderSide(color: Color(0xff3498DB)),
                           backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8))),
+                      child: Text('Mendaftar',
+                          style: GoogleFonts.arimo(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: const Color(0xff3498DB))),
                     )),
                 // const SizedBox(height: 21),
               ],
