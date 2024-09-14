@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "794595426735",
+    "project_id": "tugas14flutter-sanbercode",
+    "storage_bucket": "tugas14flutter-sanbercode.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794595426735:android:7ef159f376206c9abcaf5a",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794595426735-402955m411lfsg4epn6829bop0f8vj4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEOZN64HCk_upfBgL6G2v_mkzsd2ik1iM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794595426735-402955m411lfsg4epn6829bop0f8vj4f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "794595426735-rk990dr5l0rbbnplb25pjs4shh7t77jh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tugas14"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
