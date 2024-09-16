@@ -6,6 +6,7 @@ class RoundTextField extends StatelessWidget {
   const RoundTextField({
     super.key,
     this.controller,
+    required void Function(dynamic text) onChanged,
   });
 
   final TextEditingController? controller;

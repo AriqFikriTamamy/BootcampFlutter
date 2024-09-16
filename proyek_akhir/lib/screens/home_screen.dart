@@ -1,71 +1,73 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+import 'package:weather_app/screens/home_screen_controller.dart';
 import '/constants/app_colors.dart';
-import '/screens/forecast_report_screen.dart';
-import '/screens/search_screen.dart';
-import '/screens/settings_screen.dart';
-import 'weather_screen/weather_screen.dart';
 import '/services/api_helper.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int _currentPageIndex = 0;
-
-  final _screens = const [
-    WeatherScreen(),
-    SearchScreen(),
-    ForecastReportScreen(),
-    SettingsScreen(),
-  ];
-
-  @override
-  void initState() {
-    ApiHelper.getCurrentWeather();
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final HomeScreenController controller = Get.put(HomeScreenController());
+
+    ApiHelper.getCurrentWeather();
+
     return Scaffold(
-      body: _screens[_currentPageIndex],
+      body: Obx(() => controller.screens[controller.currentPageIndex.value]),
       bottomNavigationBar: NavigationBarTheme(
         data: const NavigationBarThemeData(
           backgroundColor: AppColors.secondaryBlack,
         ),
-        child: NavigationBar(
-          selectedIndex: _currentPageIndex,
-          labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
-          indicatorColor: Colors.transparent,
-          onDestinationSelected: (index) =>
-              setState(() => _currentPageIndex = index),
-          destinations: const [
-            NavigationDestination(
-              icon: Icon(Icons.home_outlined, color: Colors.white),
-              selectedIcon: Icon(Icons.home, color: Colors.white),
-              label: '',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.search_outlined, color: Colors.white),
-              selectedIcon: Icon(Icons.search, color: Colors.white),
-              label: '',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.wb_sunny_outlined, color: Colors.white),
-              selectedIcon: Icon(Icons.wb_sunny, color: Colors.white),
-              label: '',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.settings_outlined, color: Colors.white),
-              selectedIcon: Icon(Icons.settings, color: Colors.white),
-              label: '',
-            ),
-          ],
+        child: Obx(
+          () => NavigationBar(
+            selectedIndex: controller.currentPageIndex.value,
+            labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+            indicatorColor: Colors.transparent,
+            onDestinationSelected: controller.updatePageIndex,
+            destinations: const [
+              NavigationDestination(
+                  icon: Icon(
+                    Icons.home_outlined,
+                    color: Colors.white,
+                  ),
+                  selectedIcon: Icon(
+                    Icons.home,
+                    color: Colors.white,
+                  ),
+                  label: ''),
+              NavigationDestination(
+                  icon: Icon(
+                    Icons.search_outlined,
+                    color: Colors.white,
+                  ),
+                  selectedIcon: Icon(
+                    Icons.search,
+                    color: Colors.white,
+                  ),
+                  label: ''),
+              NavigationDestination(
+                  icon: Icon(
+                    Icons.wb_sunny_outlined,
+                    color: Colors.white,
+                  ),
+                  selectedIcon: Icon(
+                    Icons.wb_sunny,
+                    color: Colors.white,
+                  ),
+                  label: ''),
+              NavigationDestination(
+                  icon: Icon(
+                    Icons.settings_outlined,
+                    color: Colors.white,
+                  ),
+                  selectedIcon: Icon(
+                    Icons.settings,
+                    color: Colors.white,
+                  ),
+                  label: ''),
+            ],
+          ),
         ),
       ),
     );
